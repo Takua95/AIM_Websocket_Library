@@ -16,7 +16,7 @@ from vex import *
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform
-robot = Robot()
+robot = aim.Robot()
 
 # Begin project code
 # Function to drive in a loop
@@ -44,5 +44,5 @@ def play_melody_loop():
         wait(5, MSEC)
 
 # Register functions to threads
-melody_thread = Thread(play_melody_loop)
-drive_thread = Thread(drive_square_loop)
+melody_thread = aim.Thread(play_melody_loop)
+drive_thread = aim.Thread(drive_square_loop)

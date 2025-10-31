@@ -14,7 +14,7 @@ import cv2
 import numpy as np
 from vex import *
 # Create an instance of the Robot class
-robot = Robot()
+robot = aim.Robot()
 
 def stream_video():
     """Call this function to open a new window and start video stream from AIM"""
@@ -34,8 +34,8 @@ def stream_video():
         time.sleep(0.010)
        
         try:
-            image = robot.vision.get_camera_image()
-        except (NoImageException, DisconnectedException):
+            image = aim.robot.vision.get_camera_image()
+        except (aim.NoImageException, aim.DisconnectedException):
             image = bytes(1)
         # calculate FPS
         if image != b'\x00' and image != image_last:
