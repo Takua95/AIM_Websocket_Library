@@ -27,6 +27,6 @@ color_list = [
 # Iterate over each color directly
 for color in color_list:
     robot.led.on(ALL_LEDS, color)
-    wait(1, SECONDS)
+    vex_time.wait(1, SECONDS)
 
 robot.led.off(ALL_LEDS)

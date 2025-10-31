@@ -35,7 +35,7 @@ def event_timer():
 # System event handler fired after 5 seconds
 robot.timer.event(event_timer, 5000 )
 # Add 15ms delay to make sure events are registered correctly.
-wait(15, MSEC)
+vex_time.wait(15, MSEC)
 
 def timer_countdown():
     countdown = 5
@@ -44,7 +44,7 @@ def timer_countdown():
         robot.screen.set_font(MONO60)
         robot.screen.print_at(countdown, x=90, y=130)
         countdown -= 1
-        wait(1, SECONDS)
+        vex_time.wait(1, SECONDS)
 
 robot.set_move_velocity(30, PERCENT)
 robot.move_at(0)

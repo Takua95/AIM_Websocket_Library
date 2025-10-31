@@ -24,24 +24,24 @@ def drive_square_loop():
     while True:
         robot.move_for(100, 0)
         robot.turn_for(RIGHT, 90)
-        wait(5, MSEC)
+        vex_time.wait(5, MSEC)
 
 # Function to play melody in a loop
 def play_melody_loop():
     while True:
         robot.sound.play_note("G#5", 500)
         while robot.sound.is_active():
-            wait(50, MSEC)
+            vex_time.wait(50, MSEC)
         robot.sound.play_note("C5", 500)
         while robot.sound.is_active():
-            wait(50, MSEC)
+            vex_time.wait(50, MSEC)
         robot.sound.play_note("E5", 500)
         while robot.sound.is_active():
-            wait(50, MSEC)
+            vex_time.wait(50, MSEC)
         robot.sound.play_note("A5", 250)
         while robot.sound.is_active():
-            wait(50, MSEC)
-        wait(5, MSEC)
+            vex_time.wait(50, MSEC)
+        vex_time.wait(5, MSEC)
 
 # Register functions to threads
 melody_thread = Thread(play_melody_loop)

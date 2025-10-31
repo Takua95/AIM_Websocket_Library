@@ -32,7 +32,7 @@ def stop_searching_after_timeout():
 robot.timer.event(stop_searching_after_timeout, 10000)
 
 # Pause briefly to ensure the timer event is registered
-wait(15, MSEC) 
+vex_time.wait(15, MSEC) 
 
 robot.screen.show_aivision()
 print("Searching for an orange barrel...")
@@ -54,7 +54,7 @@ while True:
         robot.stop_all_movement()
         robot.sound.play(FAIL)
         while robot.sound.is_active():
-            wait(50, MSEC)
+            vex_time.wait(50, MSEC)
         break
 
-    wait(5, MSEC)
+    vex_time.wait(5, MSEC)

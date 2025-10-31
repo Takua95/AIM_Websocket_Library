@@ -28,8 +28,8 @@ robot.screen.clear_screen(BLUE)
 # Display message and pause until the screen is pressed
 robot.screen.print_at("Tap to Start", x=55, y=120)
 while not robot.screen.pressing():
-    wait(5, MSEC)
+    vex_time.wait(5, MSEC)
 # Move and give visual feedback when the screen is pressed
 robot.move_for(200, 0)
 robot.screen.show_emoji(PROUD, LOOK_FORWARD)
-wait(2, SECONDS)
+vex_time.wait(2, SECONDS)

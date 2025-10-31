@@ -31,7 +31,7 @@ while True:
         # Turn to the object by adding your current heading and the vision bearing offset
         robot.turn_to(robot.inertial.get_heading() + vision_data[0].bearing)
         break
-    wait(20, MSEC)
+    vex_time.wait(20, MSEC)
 
 # Get orange barrel
 while True:
@@ -45,7 +45,7 @@ while True:
             robot.move_at(vision_data[0].bearing)
     else:
         robot.move_at(0)
-    wait(20, MSEC)
+    vex_time.wait(20, MSEC)
 
 # Reverse 200 mm and place the orange barrel
 robot.move_for(200, 180)

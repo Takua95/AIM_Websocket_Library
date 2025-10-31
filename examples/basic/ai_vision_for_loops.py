@@ -32,7 +32,7 @@ while True:
         if obj.id == BLUE_BARREL:
             # If a blue barrel was detected, assign the blue barrel centerX coordinate
             blue_center_x = obj.centerX
-        wait(5, MSEC)
+        vex_time.wait(5, MSEC)
     # Check if we have centerX variables set for each barrel
     if orange_center_x is not None and blue_center_x is not None:
         # Calculate the midpoint coordinates
@@ -43,4 +43,4 @@ while True:
         robot.screen.print_at("No barrels found", x=20, y=120)
         robot.screen.print_at("                 ", x=20, y=150)
 
-    wait(0.5, SECONDS)
+    vex_time.wait(0.5, SECONDS)

@@ -25,7 +25,7 @@ while True:
     if vision_data is not None and len(vision_data) > 0:
         robot.sound.play(BLINKER)
         while robot.sound.is_active():
-            wait(50, MSEC)
+            vex_time.wait(50, MSEC)
         robot.stop_all_movement()
         break
-    wait(5, MSEC)
+    vex_time.wait(5, MSEC)

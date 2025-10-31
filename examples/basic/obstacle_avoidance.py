@@ -24,4 +24,4 @@ while True:
     vision_data = robot.vision.get_data(ALL_CARGO)
     if vision_data is not None and len(vision_data) > 0:
         robot.turn_for(RIGHT, 45)
-    wait(5, MSEC)
+    vex_time.wait(5, MSEC)

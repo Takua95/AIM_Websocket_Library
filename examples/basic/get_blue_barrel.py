@@ -30,7 +30,7 @@ while True:
         # Turn to the object by adding your current heading and the vision bearing offset
         robot.turn_to(robot.inertial.get_heading() + vision_data[0].bearing)
         break
-    wait(20, MSEC)
+    vex_time.wait(20, MSEC)
 
 # This is an updated get blue barrel barrel macro
 # Get blue barrel and celebrate
@@ -48,4 +48,4 @@ while True:
             robot.move_at(vision_data[0].bearing)
     else:
         robot.move_at(0)
-    wait(20, MSEC)
+    vex_time.wait(20, MSEC)

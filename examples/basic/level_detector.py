@@ -48,4 +48,4 @@ while True:
             robot.screen.set_fill_color(GREEN)
             robot.screen.set_font(MONO60)
             robot.screen.print_at("FLAT", x=60, y=140)
-    wait(20, MSEC)
+    vex_time.wait(20, MSEC)

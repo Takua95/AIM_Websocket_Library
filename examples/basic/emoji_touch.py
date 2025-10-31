@@ -31,7 +31,7 @@ def robot_pressed():
 # System event handler for screen pressed event
 robot.screen.pressed(robot_pressed)
 # Add 15ms delay to make sure events are registered correctly.
-wait(15, MSEC)
+vex_time.wait(15, MSEC)
 
 # Reset touch counter
 touch_count = 0
@@ -50,4 +50,4 @@ while True:
         robot.screen.show_emoji(CONFIDENT, LOOK_FORWARD)
     else:
         robot.screen.show_emoji(HAPPY, LOOK_FORWARD)
-    wait(5, MSEC)
+    vex_time.wait(5, MSEC)
