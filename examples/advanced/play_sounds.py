@@ -26,9 +26,9 @@ def test_play_sound_file(robot: Robot, file):
     robot.sound.play_local_file(filepath)
     while robot.sound.is_active():
         print("playing sound file")
-        sleep(100)
+        vex_time.sleep(100)
     print("finished")
-    sleep(500)
+    vex_time.sleep(500)
 
 NOTE_TIME    = 1000
 def test_beethoven(robot: Robot):
@@ -40,13 +40,13 @@ def test_beethoven(robot: Robot):
     play_note_and_wait(robot, "G5",  NOTE_TIME/4, volume=60)
     play_note_and_wait(robot, "Eb5", NOTE_TIME,   volume=60)
 
-    sleep(NOTE_TIME/4)
+    vex_time.sleep(NOTE_TIME/4)
     play_note_and_wait(robot, "F5",  NOTE_TIME/4, volume=60)
     play_note_and_wait(robot, "F5",  NOTE_TIME/4, volume=60)
     play_note_and_wait(robot, "F5",  NOTE_TIME/4, volume=60)
     play_note_and_wait(robot, "D5",  NOTE_TIME*2)
 
-    sleep(NOTE_TIME/4)
+    vex_time.sleep(NOTE_TIME/4)
     play_note_and_wait(robot, "G5",  NOTE_TIME/4, volume=20)
     play_note_and_wait(robot, "G5",  NOTE_TIME/4, volume=20)
     play_note_and_wait(robot, "G5",  NOTE_TIME/4, volume=20)
@@ -74,7 +74,7 @@ def play_note_and_wait(robot: Robot, note: str, duration: int, volume: int = 50)
         time_elapsed = time.time() - start_time
         if time_elapsed*1000 > duration+3: # limit gap between notes for more seamless playback
             break
-        sleep(10)
+        vex_time.sleep(10)
 
 class TestSoundFile(AimExampleBase):
     def __init__(self):

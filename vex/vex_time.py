@@ -3,9 +3,9 @@
 #  Licensed under the MIT License. See License.txt in the project root for license information.
 # =================================================================================================
 """ 
-AIM WebSocket API - Util
+AIM WebSocket API - Time
 
-This module defines various utility functions used in the AIM WebSocket API.
+This module defines time functions used in the AIM WebSocket API.
 """
 
 import time
