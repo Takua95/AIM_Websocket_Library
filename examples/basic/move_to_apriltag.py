@@ -17,7 +17,7 @@ from vex import *
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform
-robot = Robot()
+robot = aim.Robot()
 robot.vision.tag_detection(True)
 
 # Begin project code

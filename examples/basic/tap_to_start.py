@@ -16,7 +16,7 @@ from vex import *
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform
-robot = Robot()
+robot = aim.Robot()
 
 # Restore text / background defaults
 robot.screen.set_pen_color(WHITE)

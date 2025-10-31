@@ -17,7 +17,7 @@ from vex import *
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform
-robot = Robot()
+robot = aim.Robot()
 
 # Begin project code
 robot.turn_for(RIGHT, 180)

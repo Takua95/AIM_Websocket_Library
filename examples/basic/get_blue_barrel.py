@@ -16,7 +16,7 @@ from vex import *
 from vex.vex_globals import *
 
 # Robot should be defined by default
-robot = Robot()
+robot = aim.Robot()
 
 # Begin project code
 robot.set_turn_velocity(30, PERCENT)

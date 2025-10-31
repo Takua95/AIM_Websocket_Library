@@ -17,9 +17,10 @@ from vex import *
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform
-robot = Robot()
+robot = aim.Robot()
 update_screen = False
 robot_tilted = True
+
 # Begin project code
 robot.screen.set_pen_color(BLACK)
 while True:
