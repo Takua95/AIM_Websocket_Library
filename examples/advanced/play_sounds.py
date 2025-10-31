@@ -15,8 +15,7 @@ import sys
 import os
 import time
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) #use of abspath is necessary if Python < 3.9
-from vex import aim
-from vex import vex_time
+from vex import *
 
 def test_play_sound_file(robot: aim.Robot, file):
     """
