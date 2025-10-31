@@ -1038,7 +1038,7 @@ class Robot():
         self.robot_send(message.to_json())
 
     def set_xy_position(self, x, y):
-        """sets the robot’s current position to the specified values"""
+        """sets the robot's current position to the specified values"""
         offset_radians = -math.radians(self.inertial.heading_offset)
         origin_x = x * math.cos(offset_radians) - y * math.sin(offset_radians)
         origin_y = y * math.cos(offset_radians) + x * math.sin(offset_radians)
@@ -1120,7 +1120,7 @@ class Inertial():
     #endregion Inertial - Action
     #region Inertial - Mutators
     def set_heading(self, heading):
-        """sets the robot’s heading to a specified value"""
+        """sets the robot's heading to a specified value"""
         raw_heading = self.get_heading_raw()
         # print("reset heading to %f, get_heading_raw(): %f" %(heading, raw_heading))
         self.heading_offset = raw_heading - heading
@@ -1130,12 +1130,12 @@ class Inertial():
         self.set_heading(0)
 
     def set_rotation(self, rotation):
-        """sets the robot’s rotation to a specified value"""
+        """sets the robot's rotation to a specified value"""
         raw_rotation = self.get_rotation_raw()
         self.rotation_offset = raw_rotation - rotation
 
     def reset_rotation(self):
-        """resets the robot’s rotation to 0"""
+        """resets the robot's rotation to 0"""
         self.set_rotation(0)
 
     def set_crash_sensitivity(self, sensitivity=vex.SensitivityType.LOW):
@@ -1145,7 +1145,7 @@ class Inertial():
     #endregion Inertial - Mutators
     #region Inertial - Getters
     def get_heading(self):
-        """reports the robot’s heading angle. This returns a float in the range 0 to 359.99 degrees"""
+        """reports the robot's heading angle. This returns a float in the range 0 to 359.99 degrees"""
         raw_heading = self.get_heading_raw()
         heading = math.fmod(raw_heading - self.heading_offset, 360)
         #round to 2 decimal places
@@ -1162,7 +1162,7 @@ class Inertial():
         return raw_heading
 
     def get_rotation(self):
-        """returns the robot’s total rotation in degrees as a float. 
+        """returns the robot's total rotation in degrees as a float. 
         This measures how much the robot has rotated relative to its last reset point"""
         raw_rotation = self.get_rotation_raw()
         rotation = raw_rotation - self.rotation_offset
@@ -1178,7 +1178,7 @@ class Inertial():
         return raw_rotation
 
     def get_acceleration(self, axis: Union[vex.AxisType, vex.AccelerationType]):
-        """ returns the robot’s acceleration for a given axis."""
+        """ returns the robot's acceleration for a given axis."""
         if axis in [vex.AxisType.X_AXIS, vex.AccelerationType.FORWARD]:
             value = self.robot_instance._ws_status_thread.current_status["robot"]["acceleration"]["x"]
         elif axis in [vex.AxisType.Y_AXIS, vex.AccelerationType.RIGHTWARD]:
@@ -1190,7 +1190,7 @@ class Inertial():
         return value
 
     def get_turn_rate(self, axis: Union[vex.AxisType, vex.OrientationType]):
-        """returns the robot’s gyro rate for a given axis in degrees per second (DPS). It returns a float from –1000.00 to 1000.00 degrees per second"""
+        """returns the robot's gyro rate for a given axis in degrees per second (DPS). It returns a float from –1000.00 to 1000.00 degrees per second"""
         if axis in [vex.AxisType.X_AXIS, vex.OrientationType.ROLL]:
             value = self.robot_instance._ws_status_thread.current_status["robot"]["gyro_rate"]["x"]
         elif axis in [vex.AxisType.Y_AXIS, vex.OrientationType.PITCH]:
@@ -1202,7 +1202,7 @@ class Inertial():
         return value
 
     def get_roll(self):
-        """returns the robot’s roll angle in the range –180.00 to 180.00 degrees as a float"""
+        """returns the robot's roll angle in the range –180.00 to 180.00 degrees as a float"""
         value = self.robot_instance.status["robot"]["roll"]
         if type(value) == str:
             value = float(value)
@@ -1211,7 +1211,7 @@ class Inertial():
         return value
 
     def get_pitch(self):
-        """returns the robot’s pitch angle in the range –90.00 to 90.00 degrees as a float"""
+        """returns the robot's pitch angle in the range –90.00 to 90.00 degrees as a float"""
         value = self.robot_instance.status["robot"]["pitch"]
         if type(value) == str:
             value = float(value)
@@ -1220,7 +1220,7 @@ class Inertial():
         return value
 
     def get_yaw(self):
-        """returns the robot’s yaw angle in the range –180.00 to 180.00 degrees as a float"""
+        """returns the robot's yaw angle in the range –180.00 to 180.00 degrees as a float"""
         value = self.robot_instance.status["robot"]["yaw"]
         if type(value) == str:
             value = float(value)
@@ -1276,7 +1276,7 @@ class Screen():
     #region Screen - Cursor Print
 
     def print(self,  *args, **kwargs):
-        """displays text on the robot’s screen at the current cursor position and font"""
+        """displays text on the robot's screen at the current cursor position and font"""
         try:
             out=io.StringIO()
             if 'end' not in kwargs:
@@ -1291,7 +1291,7 @@ class Screen():
             print(f"Error displaying text on screen: {e}")
 
     def set_cursor(self, row, column):
-        """sets the cursor’s (row, column) screen position"""
+        """sets the cursor's (row, column) screen position"""
         message = commands.ScreenSetCursor(row, column)
         self.robot_instance.robot_send(message.to_json())
 
@@ -1323,7 +1323,7 @@ class Screen():
     #endregion Screen - Cursor Print
     #region Screen - XY Print
     def print_at(self, *args, x=0, y=0, **kwargs):
-        """displays text on the robot’s screen at a specified (x, y) screen coordinate. This method disregards the current cursor position"""
+        """displays text on the robot's screen at a specified (x, y) screen coordinate. This method disregards the current cursor position"""
         out=io.StringIO()
         if 'end' not in kwargs:
             kwargs['end'] = ""
@@ -1342,13 +1342,13 @@ class Screen():
     #region Screen - Mutators
 
     def clear_screen(self, color=vex.Color.BLUE):
-        """clears the robot’s screen of all drawings and text"""
+        """clears the robot's screen of all drawings and text"""
         r,g,b = self._return_rgb(color)
         message = commands.ScreenClear(r, g, b)
         self.robot_instance.robot_send(message.to_json())
 
     def set_font(self, fontname: vex.FontType):
-        """sets the font used for displaying text on the robot’s screen"""
+        """sets the font used for displaying text on the robot's screen"""
         message = commands.ScreenSetFont(fontname.lower())
         self.robot_instance.robot_send(message.to_json())
 
@@ -1416,7 +1416,7 @@ class Screen():
         self.robot_instance.robot_send(message.to_json())
 
     def show_file(self, filename: str, x: int, y: int):
-        """draws a custom user-uploaded image on the robot’s screen at the specified (x, y) screen coordinate"""
+        """draws a custom user-uploaded image on the robot's screen at the specified (x, y) screen coordinate"""
         #TODO: alowed extensions are correct?
         if filename[-3:] not in ("bmp", "png"):
             raise InvalidImageFileException(f"extension is {filename[-3:]}; expected extension to be bmp or png")
@@ -1564,7 +1564,7 @@ class Sound():
         self.robot_instance._ws_status_thread.sound_playing_flag_needs_setting = True # have it be set again after next status message
 
     def play(self, sound: vex.SoundType, volume = 50):
-        """plays one of the robot’s built-in sounds at a specified volume percentage. 
+        """plays one of the robot's built-in sounds at a specified volume percentage. 
         Since this is a non-waiting method, the robot plays the built-in sound and moves to 
         the next command without waiting for it to finish"""
         message = commands.SoundPlay(sound.lower(), volume)
@@ -1885,7 +1885,7 @@ class AiVision():
         The AI Vision Sensor can detect signatures that include pre-trained objects, AprilTags, or configured Colors and Color Codes.
 
         Color Signatures and Color Codes must be configured first in the AI Vision Utility in VEXcode before they can be used with this method.
-        The tuple stores objects ordered from largest to smallest by width, starting at index 0. Each object’s properties can be accessed using its index. 
+        The tuple stores objects ordered from largest to smallest by width, starting at index 0. Each object's properties can be accessed using its index. 
         An empty tuple is returned if no matching objects are detected.
         
         #### Arguments:

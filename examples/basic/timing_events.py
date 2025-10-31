@@ -7,7 +7,7 @@
 
 Project:      Timing Events
 Description:  This project starts driving forward but stops automatically once five 
-              seconds have elapsed, then displays “Time’s up!” on the screen.
+              seconds have elapsed, then displays "Time's up!" on the screen.
 
 ------------------------------------------------------------------------------------
 """

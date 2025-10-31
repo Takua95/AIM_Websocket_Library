@@ -6,7 +6,7 @@
 ------------------------------------------------------------------------------------
 
 Project:      Emoji Reaction
-Description:  This project displays a happy emoji when the robot’s angle is stable 
+Description:  This project displays a happy emoji when the robot's angle is stable 
               and a surprised emoji when tilted.
 
 ------------------------------------------------------------------------------------
