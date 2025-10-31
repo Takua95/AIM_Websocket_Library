@@ -15,10 +15,9 @@ import sys
 import os
 import time
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))) #use of abspath is necessary if Python < 3.9
-from vex import aim
-from vex import vex_time
+from vex import *
 
-def test_play_sound_file(robot: aim.Robot, file):
+def test_play_sound_file(robot: Robot, file):
     """
     Play the specified file and wait until it is finished
     """
@@ -32,7 +31,7 @@ def test_play_sound_file(robot: aim.Robot, file):
     vex_time.sleep(500)
 
 NOTE_TIME    = 1000
-def test_beethoven(robot: aim.Robot):
+def test_beethoven(robot: Robot):
     """
     Play the first few notes from Beethoven's Symphony No. 5.
     """
@@ -65,7 +64,7 @@ def test_beethoven(robot: aim.Robot):
     play_note_and_wait(robot, "C6",  NOTE_TIME*0.75, volume=20)
 
 
-def play_note_and_wait(robot: aim.Robot, note: str, duration: int, volume: int = 50):
+def play_note_and_wait(robot: Robot, note: str, duration: int, volume: int = 50):
     """
     Play the specified note on AIM and for the specified duration.
     """
