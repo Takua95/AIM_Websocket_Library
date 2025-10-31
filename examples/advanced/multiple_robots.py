@@ -34,5 +34,5 @@ def move_in_square(robot):
     robot.move_for(100, 90)
 
 # Create threads to run the move_in_square function for each robot
-move_robot_1_thread = Thread(move_in_square, args=(robot1))
-move_robot_2_thread = Thread(move_in_square, args=(robot2))
+move_robot_1_thread = Thread(move_in_square, args=(robot1,))
+move_robot_2_thread = Thread(move_in_square, args=(robot2,))
