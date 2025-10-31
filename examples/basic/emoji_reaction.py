@@ -12,8 +12,10 @@ Description:  This project displays a happy emoji when the robot’s angle is st
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+import math
+from vex import aim,vex_time
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot initialization for AIM platform
 robot = aim.Robot()

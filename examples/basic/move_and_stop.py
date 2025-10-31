@@ -12,7 +12,7 @@ Description:  This project moves the robot forward 300 mm and plays
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform

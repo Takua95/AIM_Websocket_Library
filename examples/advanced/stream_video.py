@@ -12,7 +12,7 @@ Description: JPEG image stream, using opencv to display to screen.
 import time
 import cv2
 import numpy as np
-from vex import *
+from vex import aim
 # Create an instance of the Robot class
 robot = aim.Robot()
 

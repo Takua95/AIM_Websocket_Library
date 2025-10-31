@@ -12,8 +12,9 @@ Description:  This project will print the timer, heading, and yaw orientation va
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot initialization for AIM platform
 robot = aim.Robot()

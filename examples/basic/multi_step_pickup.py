@@ -12,8 +12,9 @@ Description:  This project turns right until an orange barrel is found, moves
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim, vex_time
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot initialization for AIM platform
 robot = aim.Robot()

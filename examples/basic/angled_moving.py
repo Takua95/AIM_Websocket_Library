@@ -12,7 +12,7 @@ Description:  This project moves the robot at 45-degree angles at 100%
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform

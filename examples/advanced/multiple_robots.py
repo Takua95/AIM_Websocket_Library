@@ -12,7 +12,7 @@ Note:         pass the IP Address of the robot to the Robot constructor
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim
 from vex.vex_globals import *
 
 #update robot's IP address

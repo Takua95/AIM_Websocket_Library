@@ -12,7 +12,7 @@ Description:  This project makes the robot move in a square path,
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform

@@ -12,7 +12,7 @@ Description:  This project uses a proper Python For Loop to iterate through AI V
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim,vex_time
 from vex.vex_globals import *
 
 # Robot initialization for AIM platform

@@ -12,8 +12,9 @@ Description:  This project changes the screen's emoji based on how many times th
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim, vex_time
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot initialization for AIM platform
 robot = aim.Robot()

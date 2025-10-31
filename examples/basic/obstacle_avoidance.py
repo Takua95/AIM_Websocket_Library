@@ -12,8 +12,9 @@ Description:  This project will move the AIM robot forward until any cargo is fo
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim, vex_time
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot initialization for AIM platform
 robot = aim.Robot()

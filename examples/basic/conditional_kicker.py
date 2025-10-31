@@ -13,8 +13,9 @@ Description:  This project will turn the AIM robot to rotate 180 degrees to the 
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot initialization for AIM platform
 robot = aim.Robot()

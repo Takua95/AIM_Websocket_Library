@@ -12,8 +12,9 @@ Description:  This project will look for a blue barrel, move to it, then celebra
 ------------------------------------------------------------------------------------
 """
 # Library imports
-from vex import *
+from vex import aim, vex_time
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot should be defined by default
 robot = aim.Robot()

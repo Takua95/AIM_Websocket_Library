@@ -11,9 +11,10 @@ Description:  This project will play a song (using notes) in one thread while
  
 ------------------------------------------------------------------------------------
 """
-# Library imports
-from vex import *
+# Library import
+from vex import aim, vex_time
 from vex.vex_globals import *
+from vex.vex_types import *
 
 # Robot initialization for AIM platform
 robot = aim.Robot()
